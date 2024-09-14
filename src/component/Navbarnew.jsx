@@ -34,8 +34,8 @@ function Navbarnew() {
                     <div className={active}>
                         <ul className='nav-Links'>
                             <Link to='/' className='nav-link'>Home</Link>
-                            <Link to='/dashboard' className='nav-link'>Products</Link>
-                            <Link to='/singup' className='nav-link nav-link-sign'>Add product</Link>
+                            <Link to='/' className='nav-link'>Products</Link>
+                            <Link to='/addProduct' className='nav-link nav-link-sign'>Add product</Link>
                             <Link to='/login' className='nav-link'>Contact</Link>
                         </ul>
                         {/* icon to close navbar on small devices */}
