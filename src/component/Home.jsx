@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import './home.css';
-//import axios from 'axios';
-//import { useDispatch } from 'react-redux';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-// import HomeCard from './HomeCard';
+import { appData } from '../appData';
+import { setProducts } from '../redux/productSlice';
+import { useDispatch } from 'react-redux';
 // IMPORT ICONS
 import { MdArrowCircleRight } from "react-icons/md";
 import { Link } from 'react-router-dom';
@@ -15,7 +15,32 @@ import Image4 from '../images/shoes.png';
 import Image5 from '../images/jeep.png';
 
 function Home() {
-  
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+
+    const getDetails = async () => {
+      try {
+
+        if (appData) {
+          dispatch(setProducts(appData));
+        }
+
+        //axios.get("products.json")
+
+        //.then((res) => console.log(res))
+        //.catch((err) => console.log(err));
+
+      } catch (error) {
+        console.log(error.message);
+      }
+    }
+
+    getDetails();
+
+  }, [dispatch]);
+
   return (
     <div className='dashHome-margin'>
       <Container>
@@ -33,7 +58,7 @@ function Home() {
                 <Card.Body className='cardBtn-dashHome'>
                   <div >
                     <MdArrowCircleRight className='rightArrow' />
-                    <Link to='/shirt' className='productLink'> Car</Link>
+                    <Link to={`/products/${'Car'}`} className='productLink'> Car</Link>
                   </div>
                 </Card.Body>
               </Card>
@@ -49,7 +74,7 @@ function Home() {
                 <Card.Body className='cardBtn-dashHome'>
                   <div >
                     <MdArrowCircleRight className='rightArrow' />
-                    <Link to='/jacket' className='productLink'> Bike</Link>
+                    <Link to={`/products/${'Bike'}`} className='productLink'> Bike</Link>
                   </div>
                 </Card.Body>
               </Card>
