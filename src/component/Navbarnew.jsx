@@ -34,9 +34,9 @@ function Navbarnew() {
                     <div className={active}>
                         <ul className='nav-Links'>
                             <Link to='/' className='nav-link'>Home</Link>
-                            <Link to='/' className='nav-link'>Products</Link>
+                            <Link to='/prodcts' className='nav-link'>Products</Link>
                             <Link to='/addProduct' className='nav-link nav-link-sign'>Add product</Link>
-                            <Link to='/login' className='nav-link'>Contact</Link>
+                            <Link to='/cotact' className='nav-link'>Contact</Link>
                         </ul>
                         {/* icon to close navbar on small devices */}
                         <AiFillCloseCircle className='closeIcon img-nav' onClick={removeNavbar} />

@@ -13,12 +13,17 @@ import Image2 from '../images/bike.png';
 import Image3 from '../images/tv.png';
 import Image4 from '../images/shoes.png';
 import Image5 from '../images/jeep.png';
+// IMPORT AOS ANIMATION
+import Aos from 'aos';
+import "aos/dist/aos.css"; 
 
 function Home() {
 
   const dispatch = useDispatch();
 
   useEffect(() => {
+
+    Aos.init({ duration: 2000 });
 
     const getDetails = async () => {
       try {
@@ -41,13 +46,13 @@ function Home() {
   return (
     <div className='dashHome-margin'>
       <Container>
-        <div className='product-Head-div-home'>
+        <div data-aos='fade-left' className='product-Head-div-home'>
           <span className='product-Head-home'>Our Products</span>
         </div>
         <Row>
 
           <Col lg={4} md={6}>
-            <div className='card-dashHome cardTow-dashHome'>
+            <div data-aos='fade-up' className='card-dashHome cardTow-dashHome'>
               <Card style={{ width: '18rem' }} className='card-dashHome card-bg'>
                 <div className='cardImg-div'>
                   <img src={Image1} alt="cardImage" className='img-dashHome' />
@@ -63,7 +68,7 @@ function Home() {
           </Col>
 
           <Col lg={4} md={6}>
-            <div className='card-dashHome cardTow-dashHome'>
+            <div data-aos='fade-up' className='card-dashHome cardTow-dashHome'>
               <Card style={{ width: '18rem' }} className='card-bg'>
                 <div className='cardImg-div'>
                   <img src={Image2} alt="cardImage" className='img-dashHome' />
@@ -78,7 +83,7 @@ function Home() {
             </div>
           </Col>
 
-          <Col lg={4} md={6}>
+          <Col data-aos='fade-up' lg={4} md={6}>
             <div className='card-dashHome cardTow-dashHome'>
               <Card style={{ width: '18rem' }} className='card-bg'>
                 <div className='cardImg-div'>
@@ -94,7 +99,7 @@ function Home() {
             </div>
           </Col>
 
-          <Col lg={4} md={6}>
+          <Col data-aos='fade-up' lg={4} md={6}>
             <div className='card-dashHome cardTow-dashHome'>
               <Card style={{ width: '18rem' }} className='card-bg'>
                 <div className='cardImg-div'>
@@ -111,7 +116,7 @@ function Home() {
           </Col>
 
 
-          <Col lg={4} md={6}>
+          <Col data-aos='fade-up' lg={4} md={6}>
             <div className='card-dashHome cardTow-dashHome'>
               <Card style={{ width: '18rem' }} className='card-bg'>
                 <div className='cardImg-div'>
