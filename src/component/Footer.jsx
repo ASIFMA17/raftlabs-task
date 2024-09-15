@@ -31,19 +31,19 @@ function Footer() {
 
                 <div className="footerLinks">
                     <span className="linkTitle">information</span>
-                    <li className='move-footer move-flex' >
+                    <li className='move-footer' >
                         <FiChevronRight className='rightArrow-footer' />
                         <Link to='/' className='footer-link' >Home</Link>
                     </li>
-                    <li className='move-footer move-flex'>
+                    <li className='move-footer'>
                         <FiChevronRight className='rightArrow-footer' />
                         <Link to='/' className='footer-link' >Product</Link>
                     </li>
-                    <li className='move-footer move-flex' >
+                    <li className='move-footer' >
                         <FiChevronRight className='rightArrow-footer' />
                         <Link to='/addProduct' className='footer-link' >Add Product</Link>
                     </li>
-                    <li className='move-footer move-flex'>
+                    <li className='move-footer'>
                         <FiChevronRight className='rightArrow-footer' />
                         <Link to='/' className='footer-link' >Contact Page</Link>
                     </li>
@@ -52,23 +52,23 @@ function Footer() {
 
                 <div className="footerLinks">
                     <span className="linkTitle">Our Products</span>
-                    <li className='move-footer move-flex-footer'>
+                    <li className='move-footer'>
                         <FiChevronRight className='rightArrow-footer' />
                         <Link to={`/products/${'Car'}`} className='footer-link' >Car</Link>
                     </li>
-                    <li className='move-footer move-flex-footer'>
+                    <li className='move-footer'>
                         <FiChevronRight className='rightArrow-footer' />
                         <Link to={`/products/${'Bike'}`} className='footer-link' >Bike</Link>
                     </li>
-                    <li className='move-footer move-flex-footer'>
+                    <li className='move-footer'>
                         <FiChevronRight className='rightArrow-footer' />
                         <Link to={`/products/${'Technical Items'}`} className='footer-link' >Technical Items</Link>
                     </li>
-                    <li className='move-footer move-flex-footer'>
+                    <li className='move-footer '>
                         <FiChevronRight className='rightArrow-footer' />
                         <Link to={ `/products/${'Shoes'}` } className='footer-link' >Shoes</Link>
                     </li>
-                    <li className='move-footer move-flex-footer'>
+                    <li className='move-footer'>
                         <FiChevronRight className='rightArrow-footer' />
                         <Link to={ `/products/${'Jeep'}` } className='footer-link' >Jeep</Link>
                     </li>

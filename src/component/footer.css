@@ -123,11 +123,6 @@ p {
     }
 }
 
-.move-flex-footer{
-    display: flex;
-    justify-content: center;
-}
-
 .footer-link {
     color: black;
     opacity: .7;
@@ -185,9 +180,6 @@ p {
         font-size: 15px;
     }
 
-    .move-flex-footer{
-        justify-content: start;
-    }
 
 }
 
