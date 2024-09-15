@@ -58,7 +58,7 @@ function Home() {
                   <img src={Image1} alt="cardImage" className='img-dashHome' />
                 </div>
                 <Card.Body className='cardBtn-dashHome'>
-                  <div className='rightText'>
+                  <div className='rightTextDiv'>
                     <MdArrowCircleRight className='rightArrow' />
                     <Link to={`/products/${'Car'}`} className='productLink'> Car</Link>
                   </div>
@@ -74,7 +74,7 @@ function Home() {
                   <img src={Image2} alt="cardImage" className='img-dashHome' />
                 </div>
                 <Card.Body className='cardBtn-dashHome'>
-                  <div className='rightText'>
+                  <div className='rightTextDiv'>
                     <MdArrowCircleRight className='rightArrow' />
                     <Link to={`/products/${'Bike'}`} className='productLink'> Bike</Link>
                   </div>
@@ -90,7 +90,7 @@ function Home() {
                   <img src={Image3} alt="cardImage" className='img-dashHome' />
                 </div>
                 <Card.Body className='cardBtn-dashHome'>
-                  <div className='rightText'>
+                  <div className='rightTextDiv'>
                     <MdArrowCircleRight className='rightArrow' />
                     <Link to={`/products/${'Technical Items'}`} className='productLink'> Technical Items</Link>
                   </div>
@@ -106,7 +106,7 @@ function Home() {
                   <img src={Image4} alt="cardImage" className='img-dashHome' />
                 </div>
                 <Card.Body className='cardBtn-dashHome'>
-                  <div className='rightText'>
+                  <div className='rightTextDiv'>
                     <MdArrowCircleRight className='rightArrow' />
                     <Link to={`/products/${'Shoes'}`} className='productLink'> Shoes</Link>
                   </div>
@@ -123,7 +123,7 @@ function Home() {
                   <img src={Image5} alt="cardImage" className='img-dashHome' />
                 </div>
                 <Card.Body className='cardBtn-dashHome'>
-                  <div className='rightText'>
+                  <div className='rightTextDiv'>
                     <MdArrowCircleRight className='rightArrow' />
                     <Link to={`/products/${'Jeep'}`} className='productLink'> Jeep</Link>
                   </div>

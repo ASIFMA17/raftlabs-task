@@ -116,12 +116,15 @@ p {
 }
 
 .move-footer {
-    display: flex;
     transition: .3s ease-in-out;
 
     &:hover {
         transform: translateX(10px);
     }
+}
+
+.move-flex{
+    display: flex;
 }
 
 .footer-link {
