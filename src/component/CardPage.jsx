@@ -91,12 +91,7 @@ function CardPage({ id , name, stock, price, category , description }) {
     return (
         <div className='card-home'>
             <Card className='card-margin'>
-                {/* <div className='image-margin'> */}
-                {/*<Card.Img variant="top" src={image} className='card-img' /> */}
-                {/* </div> */}
                 <Card.Body className='cardBody'>
-                    {/* <Card.Title className='card-head'>{ }</Card.Title> */}
-                    {/* <Card.Text> */}
                     <ul className='card-ul'>
                         <li className='card-text'>Name : {name}</li>
                         <li className='card-text'>Price : {price}</li>

@@ -44,7 +44,7 @@ function Car() {
 
             <Container >
 
-                <div style={{ display: 'flex' , justifyContent: 'space-between' , marginBottom: '10px', marginTop: '40px' }}>
+                <div className='car-head-div'>
                     <div style={{display:'flex' , gap:'5px'}}>
                         <Link style={{ display: 'flex', justifyContent: 'start' }} to='/'>
                             <IoArrowBackCircle style={{ width: '24px', height: '24px', color: '#4E342E' }} />

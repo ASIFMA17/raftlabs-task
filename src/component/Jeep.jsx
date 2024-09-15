@@ -44,8 +44,8 @@ function Jeep() {
 
             <Container >
 
-                <div style={{ display: 'flex', gap: '5px', marginBottom: '10px', marginTop: '40px' }}>
-                    <Link style={{ display: 'flex', justifyContent: 'start' }} to='/'>
+                <div className='car-head-div'>
+                    <Link className='flex jusify-start' to='/'>
                         <IoArrowBackCircle style={{ width: '24px', height: '24px', color: '#4E342E' }} />
                     </Link>
                     <span className='head'>Product Listing</span>
