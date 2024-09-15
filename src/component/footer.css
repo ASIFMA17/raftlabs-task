@@ -123,6 +123,10 @@ p {
     }
 }
 
+.move-flex{
+    display: flex;
+}
+
 .footer-link {
     color: black;
     opacity: .7;
