@@ -78,6 +78,10 @@
     padding-left: 3px;
 }
 
+.rightText{
+    display: flex;
+}
+
 @media (min-width:768px) {
     .cardTow-dashHome {
         margin-bottom: 30px;
