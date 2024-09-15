@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import './home.css';
 import { Container, Row, Col, Card } from 'react-bootstrap';
-import { appData } from '../appData';
 import { setProducts } from '../redux/productSlice';
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
 // IMPORT ICONS
 import { MdArrowCircleRight } from "react-icons/md";
 import { Link } from 'react-router-dom';
@@ -23,14 +23,11 @@ function Home() {
     const getDetails = async () => {
       try {
 
-        if (appData) {
-          dispatch(setProducts(appData));
-        }
+        axios.get("products.json")
 
-        //axios.get("products.json")
-
-        //.then((res) => console.log(res))
-        //.catch((err) => console.log(err));
+        //.then((res) => console.log(res.data.products))
+        .then((res) => dispatch(setProducts(res.data.products)))
+        .catch((err) => console.log(err));
 
       } catch (error) {
         console.log(error.message);
@@ -90,7 +87,7 @@ function Home() {
                 <Card.Body className='cardBtn-dashHome'>
                   <div >
                     <MdArrowCircleRight className='rightArrow' />
-                    <Link to='/technicalIteams' className='productLink'> Technical Items</Link>
+                    <Link to={`/products/${'Technical Items'}`} className='productLink'> Technical Items</Link>
                   </div>
                 </Card.Body>
               </Card>
@@ -106,7 +103,7 @@ function Home() {
                 <Card.Body className='cardBtn-dashHome'>
                   <div >
                     <MdArrowCircleRight className='rightArrow' />
-                    <Link to='/goldPlate' className='productLink'> Shoes</Link>
+                    <Link to={`/products/${'Shoes'}`} className='productLink'> Shoes</Link>
                   </div>
                 </Card.Body>
               </Card>
@@ -123,7 +120,7 @@ function Home() {
                 <Card.Body className='cardBtn-dashHome'>
                   <div >
                     <MdArrowCircleRight className='rightArrow' />
-                    <Link to='/bag' className='productLink'> Boot</Link>
+                    <Link to={`/products/${'Jeep'}`} className='productLink'> Jeep</Link>
                   </div>
                 </Card.Body>
               </Card>

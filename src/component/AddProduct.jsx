@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { IoArrowBackCircle } from 'react-icons/io5';
 import { useDispatch } from 'react-redux';
 import { addProduct } from '../redux/productSlice';
+import { toast } from 'react-toastify';
 
 function AddProduct() {
 
@@ -15,14 +16,16 @@ function AddProduct() {
         'errName': false,
         'errStock': false,
         'errPrice': false,
-        'errCategory': false
+        'errCategory': false,
+        'errDescription': false
     })
 
     const [inputs, setInputs] = useState({
         'name': '',
         'stock': '',
         'price': '',
-        'category': ''
+        'category': '',
+        'description': ''
     });
 
     const onSubmit = async (e) => {
@@ -34,7 +37,7 @@ function AddProduct() {
             return Date.now().toString(36) + Math.random().toString(36).substr(2, 5);
         };
         
-        console.log(generateRandomId()); // Example output: 'a1b2c3d4e'
+        //console.log(generateRandomId()); // Example output: 'a1b2c3d4e'
 
         // Create the new product object from form inputs
         const newProduct = {
@@ -42,15 +45,17 @@ function AddProduct() {
             name: inputs.name,
             stock: inputs.stock,
             price: inputs.price,
-            category: inputs.category
+            category: inputs.category,
+            description: inputs.description
         };
 
         // Dispatch the action to add the new product to the Redux store
         if (newProduct) {
             navigate(`/products/${newProduct.category}`);
             dispatch(addProduct(newProduct));
-
-            console.log("New Product Added:", newProduct);
+            toast.success('Product added successfully completed');
+        } else {
+            toast.error('Product added failed');
         }
 
         // Optionally close the form or update the UI as needed
@@ -109,6 +114,14 @@ function AddProduct() {
                                 </select>
 
                                 <span className='error-signup'>Enter product category</span>
+                            </div>
+                        </Col>
+
+                        <Col lg={4} sm={6}>
+                            <div>
+                                <span className='signupList-Head'>Description :-</span>
+                                <input type="text" placeholder='Description' className='inpuBox-singup' id='price' name='price' value={inputs.description} onChange={(e) => setInputs({ ...inputs, description: e.target.value })} onBlur={() => setFocus({ ...focus, errDescription: true })} focus={focus.errDescription.toString()} required />
+                                <span className='error-signup'>Enter product description</span>
                             </div>
                         </Col>
 
