@@ -116,8 +116,6 @@ p {
 }
 
 .move-footer {
-    display: flex;
-    justify-content: center;
     transition: .3s ease-in-out;
 
     &:hover {
@@ -182,9 +180,6 @@ p {
         font-size: 15px;
     }
 
-    .move-footer {
-        justify-content: flex-start;
-    }
 
 }
 
