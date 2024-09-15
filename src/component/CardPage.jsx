@@ -177,7 +177,7 @@ function CardPage({ id , name, stock, price, category , description }) {
 
             {remove && (
 
-                <div className='userProfile-margin' style={{ display: 'flex', justifyContent: 'center', zIndex: '1' }}>
+                <div className='userProfile-margin' style={{ display: 'flex', justifyContent: 'center', zIndex: '1' , width: '50px' }}>
 
                     <Card className='card-allDetails'>
                         <Card.Body className='cardUpdateBody '>
