@@ -59,7 +59,7 @@ function Bike() {
 
                             <Col lg={4} sm={6} key={index}>
 
-                                <CardPage name={element.name} stock={element.stock} price={element.price} category={element.category} />
+                                <CardPage name={element.name} stock={element.stock} price={element.price} category={element.category} description={element.description} />
 
                             </Col>
 

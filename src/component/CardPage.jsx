@@ -1,19 +1,17 @@
 import React, { useState } from 'react';
 import './card.css';
 import { Card } from 'react-bootstrap';
+import { toast } from 'react-toastify';
 //IMPORT ICONS
 import { AiFillCloseCircle } from "react-icons/ai";
 import { RiDeleteBin5Fill } from "react-icons/ri";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 //import { setProducts } from '../redux/productSlice';
-import { appData } from '../appData';
-import { deleteProduct, setProducts, updateProduct } from '../redux/productSlice';
+import { deleteProduct, updateProduct } from '../redux/productSlice';
 
-function CardPage({ id , name, stock, price, category }) {
+function CardPage({ id , name, stock, price, category , description }) {
 
     const dispatch = useDispatch();
-    const productsDetails = useSelector((state) => state.products?.product ?? []);
-    //console.log(productsDetails);
 
     const [update, setUpdate] = useState(false);
     const [remove, setRemove] = useState(false);
@@ -22,6 +20,7 @@ function CardPage({ id , name, stock, price, category }) {
         'name': name,
         'stock': stock,
         'price': price,
+        'description' : description,
         'category': category
     });
 
@@ -32,30 +31,27 @@ function CardPage({ id , name, stock, price, category }) {
 
         console.log(inputs);
 
-        // Get index of the object where the brand is 'Maruti'
-        //const index = productsDetails.findIndex(element => element.name === name && element.stock === stock);
-        //console.log(index);
+        if (name === '' && stock === '' && price === '' && category === '') {
+            toast.error('Please fill in all fields');
+            return ;
+        }
 
-        if (id) {
+        if (id && name && stock && price && description && category) {
 
             dispatch(updateProduct({
                 id ,
                 name: inputs.name,
                 stock: inputs.stock,
                 price: inputs.price,
+                description: inputs.description,
                 category: inputs.category
             }));
-            //setProductUpdate(true);
 
-            console.log('updated appData ==========>');   
-            console.log(appData);
+            toast.success('Product updated seccessfully completed');
 
+        } else {
+            toast.error('Product updated failed');
         }
-
-        //productsDetails[index] = input;
-        //const newProducts = productsDetails.slice(index, 1, input);
-        //console.log(newProducts);
-        //dispatch(setProducts(newProducts));
 
 
     }
@@ -67,6 +63,7 @@ function CardPage({ id , name, stock, price, category }) {
 
         if (id) {
             dispatch(deleteProduct(id));
+            toast.success('Product deleted seccessfully completed');
         }
 
     }
@@ -103,8 +100,9 @@ function CardPage({ id , name, stock, price, category }) {
                     <ul className='card-ul'>
                         <li className='card-text'>Name : {name}</li>
                         <li className='card-text'>Price : {price}</li>
-                        <li className='card-text'>Stock :- {stock}</li>
+                        <li className='card-text'>Stock : {stock}</li>
                         <li className='card-text'>Category : {category}</li>
+                        <li className='card-text'>description : {description}</li>
                     </ul>
                     <div className='two-buttons'>
                         <button className='card-button' onClick={(() => updateToggle())}> Update </button>
@@ -133,15 +131,19 @@ function CardPage({ id , name, stock, price, category }) {
                                         <div className='scroll-update'>
                                             <div className='inputDiv-update'>
                                                 <span className='card-text'>Name</span>
-                                                <input type="text" name='date' className='input-update' defaultValue={inputs.name} onChange={(e) => setInputs({ ...inputs, name: e.target.value })} required />
+                                                <input type="text" name='date' className='input-update' defaultValue={inputs.name} onChange={(e) => setInputs({ ...inputs, name: e.target.value })} required/>
                                             </div>
                                             <div className='inputDiv-update'>
                                                 <span className='card-text'>Stock</span>
-                                                <input type="number" name='date' className='input-update' defaultValue={inputs.stock} onChange={(e) => setInputs({ ...inputs, stock: e.target.value })} required />
+                                                <input type="number" name='date' className='input-update' defaultValue={inputs.stock} onChange={(e) => setInputs({ ...inputs, stock: e.target.value })} required/>
                                             </div>
                                             <div className='inputDiv-update'>
                                                 <span className='card-text'>Price</span>
-                                                <input type="text" name='date' className='input-update' defaultValue={inputs.price} onChange={(e) => setInputs({ ...inputs, price: e.target.value })} required />
+                                                <input type="text" name='date' className='input-update' defaultValue={inputs.price} onChange={(e) => setInputs({ ...inputs, price: e.target.value })} required/>
+                                            </div>
+                                            <div className='inputDiv-update'>
+                                                <span className='card-text'>Description</span>
+                                                <input type="text" name='date' className='input-update' defaultValue={inputs.description} onChange={(e) => setInputs({ ...inputs, description: e.target.value })} required/>
                                             </div>
                                             <div className='inputDiv-update'>
                                                 <span className='card-text'>Category</span>
@@ -156,7 +158,6 @@ function CardPage({ id , name, stock, price, category }) {
                                                     <option value='Shoes' style={{ fontSize: '12px', fontWeight: '500' }}>Shoes</option>
                                                     <option value='Jeep' style={{ fontSize: '12px', fontWeight: '500' }}>Jeep</option>
                                                 </select>
-                                                {/* <input type="text" style={{ border: 'solid 1px #000000', borderRadius: '6px', padding: '3px 15px', outline: 'none' }} /> */}
                                             </div>
 
                                         </div>
